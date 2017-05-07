@@ -16,7 +16,7 @@ RUN cd /opt/jboss/ && curl -L https://downloads.jboss.org/keycloak/$KEYCLOAK_VER
 
 #Enabling Proxy address forwarding so we can correctly handle SSL termination in front ends
 #such as an OpenShift Router or Apache Proxy
-RUN sed -i -e 's/<http-listener /& proxy-address-forwarding="${env.PROXY_ADDRESS_FORWARDING}" /' $JBOSS_HOME/standalone/configuration/standalone.xml
+#RUN sed -i -e 's/<http-listener /& proxy-address-forwarding="${env.PROXY_ADDRESS_FORWARDING}" /' $JBOSS_HOME/standalone/configuration/standalone.xml
 
 
 ADD docker-entrypoint.sh /opt/jboss/
